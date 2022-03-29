@@ -47,7 +47,23 @@
   font-size: 10px;
 }
 
+.f-px-12-rf {
+  font-size: 12px;
+}
+
 .f-px-20-rf {
   font-size: 20px;
+}
+
+.bg-color-light-blue {
+  background-color: hsl(199deg 95% 77%);
+}
+
+.f-color-light-blue {
+  color: hsl(199deg 95% 77%);
+}
+
+.bg-color-white {
+  background-color: white;
 }
 /* ******* / UTILITIES  ******* */
