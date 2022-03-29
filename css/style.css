@@ -34,4 +34,8 @@
   height: 95vh;
 }
 
+.h-50px-rf {
+  height: 50px;
+  border: 1px solid black;
+}
 /* ******* / UTILITIES  ******* */
