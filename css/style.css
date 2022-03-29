@@ -2,4 +2,31 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
+
+/* customize the principal container */
+.container-principal-rf {
+  height: 95%;
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/******** UTILITIES  ********/
+
+.bg-color-main-top-rf {
+  background-color: hsl(174deg 100% 29%);
+  height: 10%;
+}
+
+.bg-color-main-bottom-rf {
+  background-color: hsl(67deg 10% 84%);
+  height: 90%;
+}
+
+/* ******* / UTILITIES  ******* */
