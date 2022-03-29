@@ -32,7 +32,7 @@
       <div class="bg-color-main-bottom-rf"></div>
 
       <!-- PRINCIPAL CONTAINER WHERE IS THE IMPORTANT CODE -->
-      <div class="container-principal-rf container-fluid">
+      <div id="chat" class="container-principal-rf container-fluid">
         <div class="row">
           <!-- FIRST PART OF THW WEB-APP -->
           <div class="col-4">
@@ -43,12 +43,21 @@
 
               <!-- icons of the profile -->
               <div class="col-12 h-50px-rf"></div>
-              <!-- n -->
               <div class="col-12 h-50px-rf"></div>
               <div class="col-12 h-50px-rf"></div>
+            </div>
 
-              <!-- BOTTOM PART OF THE FIRST PART WHERE ARE SITUATED THE CHATS -->
-              <div class="row"></div>
+            <!-- BOTTOM PART OF THE FIRST PART WHERE ARE SITUATED THE CHATS -->
+            <div class="row">
+              <!-- contact is an element of the array contacts -->
+              <div v-for="(contactObj,i) in contacts" class="col-12 d-flex m-1">
+                <!-- insert images -->
+                <img
+                  :src="takeIMG(contactObj)"
+                  alt="img_avatar"
+                  class="col-2 img-fluid rounded-circle"
+                />
+              </div>
             </div>
           </div>
 

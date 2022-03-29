@@ -4,11 +4,17 @@
    Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
 */
 
+/********** CODE MAIN *********/
+
+//ARRAY OF OBJECT
 const contacts = [
+  // FIRST OBJECT
   {
     name: "Michele",
     avatar: "_1",
     visible: true,
+
+    //array22 of object
     messages: [
       {
         date: "10/01/2020 15:30:55",
@@ -27,10 +33,14 @@ const contacts = [
       },
     ],
   },
+
+  // SECOND OBJECT
   {
     name: "Fabio",
     avatar: "_2",
     visible: true,
+
+    //array2 of object
     messages: [
       {
         date: "20/03/2020 16:30:00",
@@ -49,10 +59,14 @@ const contacts = [
       },
     ],
   },
+
+  // THIRD OBJECT
   {
     name: "Samuele",
     avatar: "_3",
     visible: true,
+
+    //array2 of object
     messages: [
       {
         date: "28/03/2020 10:10:40",
@@ -71,10 +85,14 @@ const contacts = [
       },
     ],
   },
+
+  // FOURTH OBJECT
   {
     name: "Alessandro B.",
     avatar: "_4",
     visible: true,
+
+    //array2 of object
     messages: [
       {
         date: "10/01/2020 15:30:55",
@@ -88,10 +106,14 @@ const contacts = [
       },
     ],
   },
+
+  // FIFTH OBJECT
   {
     name: "Alessandro L.",
     avatar: "_5",
     visible: true,
+
+    //array2 of object
     messages: [
       {
         date: "10/01/2020 15:30:55",
@@ -105,10 +127,14 @@ const contacts = [
       },
     ],
   },
+
+  // SIXTH OBJECT
   {
     name: "Claudia",
     avatar: "_6",
     visible: true,
+
+    //array2 of object
     messages: [
       {
         date: "10/01/2020 15:30:55",
@@ -127,10 +153,14 @@ const contacts = [
       },
     ],
   },
+
+  // SEVENTH OBJECT
   {
     name: "Federico",
     avatar: "_7",
     visible: true,
+
+    //array2 of object
     messages: [
       {
         date: "10/01/2020 15:30:55",
@@ -144,10 +174,14 @@ const contacts = [
       },
     ],
   },
+
+  // EIGHT OBJECT
   {
     name: "Davide",
     avatar: "_8",
     visible: true,
+
+    //array2 of object
     messages: [
       {
         date: "10/01/2020 15:30:55",
@@ -167,3 +201,23 @@ const contacts = [
     ],
   },
 ];
+
+/********** CODE MAIN *********/
+
+/********** VUE JS *********/
+
+const chat = new Vue({
+  el: "#chat",
+
+  data: {
+    contacts,
+  },
+
+  methods: {
+    // function that return the path of the images contacts
+    takeIMG(contact) {
+      return `images/avatar${contact.avatar}.jpg`;
+    },
+  },
+});
+/********** VUE JS *********/
