@@ -29,4 +29,9 @@
   height: 90%;
 }
 
+.bg-color-yellor-rf {
+  background-color: hsl(30deg 80% 65%);
+  height: 95vh;
+}
+
 /* ******* / UTILITIES  ******* */
