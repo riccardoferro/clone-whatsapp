@@ -38,4 +38,13 @@
   height: 50px;
   border: 1px solid black;
 }
+
+.bg-text-uname-rf {
+  color: hsl(0deg 3% 80%);
+}
+
+.f-px-10-rf {
+  font-size: 10px;
+}
+
 /* ******* / UTILITIES  ******* */
