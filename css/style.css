@@ -21,24 +21,24 @@
   overflow-y: auto;
 }
 
-.message {
+.message-rf {
   padding: 5px 10px;
   border-radius: 10px;
   margin: 5px 0;
   font-size: 10px;
 }
 
-.sent {
+.sent-rf {
   background-color: hsl(94deg 84% 85%);
   align-self: flex-end;
 }
 
-.received {
+.received-rf {
   background-color: hsl(0deg 0% 100%);
 }
 /******** UTILITIES  ********/
 
-.bg-image {
+.bg-image-rf {
   background-image: url("../images/mine.jpg");
 }
 
@@ -92,5 +92,18 @@
 
 .bg-color-white {
   background-color: white;
+}
+
+.not-selected {
+  color: white;
+  background-image: url("../images/mine.jpg");
+}
+
+.msg-not-selected {
+  margin: 100px 150px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: 0.5;
+  text-align: center;
 }
 /* ******* / UTILITIES  ******* */

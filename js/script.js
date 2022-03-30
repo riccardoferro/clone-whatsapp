@@ -22,7 +22,8 @@ const contacts = [
     name: "Michele",
     avatar: "_1",
     visible: true,
-
+    //add var active
+    active: null,
     //array2 of object
     messages: [
       {
@@ -48,7 +49,8 @@ const contacts = [
     name: "Fabio",
     avatar: "_2",
     visible: true,
-
+    //add var active
+    active: null,
     //array2 of object
     messages: [
       {
@@ -74,7 +76,8 @@ const contacts = [
     name: "Samuele",
     avatar: "_3",
     visible: true,
-
+    //add var active
+    active: null,
     //array2 of object
     messages: [
       {
@@ -100,7 +103,8 @@ const contacts = [
     name: "Alessandro B.",
     avatar: "_4",
     visible: true,
-
+    //add var active
+    active: null,
     //array2 of object
     messages: [
       {
@@ -121,7 +125,8 @@ const contacts = [
     name: "Alessandro L.",
     avatar: "_5",
     visible: true,
-
+    //add var active
+    active: null,
     //array2 of object
     messages: [
       {
@@ -142,7 +147,8 @@ const contacts = [
     name: "Claudia",
     avatar: "_6",
     visible: true,
-
+    //add var active
+    active: null,
     //array2 of object
     messages: [
       {
@@ -168,7 +174,8 @@ const contacts = [
     name: "Federico",
     avatar: "_7",
     visible: true,
-
+    //add var active
+    active: null,
     //array2 of object
     messages: [
       {
@@ -189,7 +196,8 @@ const contacts = [
     name: "Davide",
     avatar: "_8",
     visible: true,
-
+    //add var active
+    active: null,
     //array2 of object
     messages: [
       {
@@ -234,11 +242,12 @@ const chat = new Vue({
       //length of array's messages
       const length = messages.length - 1;
 
-      console.log(length);
-
       const lastMessage = messages[length].message;
 
       return lastMessage;
+    },
+    setActiveContact(index) {
+      this.contacts[index].active = 1;
     },
   },
 });

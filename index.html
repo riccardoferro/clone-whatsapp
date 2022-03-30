@@ -101,6 +101,7 @@
               <div
                 v-for="(contactObj,index) in contacts"
                 class="col-12 d-flex p-1"
+                @click="setActiveContact(index)"
               >
                 <!-- insert images -->
                 <img
@@ -125,7 +126,8 @@
           <!-- SECOND PART OF THW WEB-APP -->
 
           <div
-            class="col-8 bg-image d-flex flex-column justify-content-between"
+            v-if="contacts[0].active !== null"
+            class="col-8 bg-image-rf d-flex flex-column justify-content-between"
           >
             <!-- FIRST ROW -->
             <div class="row bg-color-profile justify-content-between p-2">
@@ -139,7 +141,7 @@
                 </div>
 
                 <div class="col-6 ms-2">
-                  <div class="f-px-12-rf">Sofia</div>
+                  <div class="f-px-12-rf">{{contacts[0].nome}}</div>
                   <div class="bg-text-uname-rf f-px-10-rf">
                     Ultimo accesso oggi alle 12:00
                   </div>
@@ -161,13 +163,13 @@
             <div class="row flex-grow-1 pt-3">
               <!-- here we have the messages -->
               <div class="col-11 ms-auto me-auto d-flex flex-column">
-                <div class="col-4 message sent">
+                <div class="col-4 message-rf sent-rf">
                   Hai portato a spasso il cane?
                 </div>
-                <div class="col-4 message sent">
+                <div class="col-4 message-rf sent-rf">
                   Ricordati di stendere i panni
                 </div>
-                <div class="col-4 message received">Tutto fatto</div>
+                <div class="col-4 message-rf received-rf">Tutto fatto</div>
               </div>
             </div>
             <!-- END SECOND ROW -->
@@ -186,6 +188,11 @@
               </div>
             </div>
             <!-- END THIRD ROW -->
+          </div>
+          <div v-else class="col-8 not-selected">
+            <div class="title-rf msg-not-selected">
+              <h3>Select a chat</h3>
+            </div>
           </div>
         </div>
       </div>
