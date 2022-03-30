@@ -18,7 +18,7 @@
 }
 
 .overflow-rf {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 /******** UTILITIES  ********/
 
@@ -64,6 +64,10 @@
 
 .f-color-light-blue {
   color: hsl(199deg 95% 77%);
+}
+
+.bg-color-profie {
+  background-color: hsl(0deg 0% 92%);
 }
 
 .bg-color-white {

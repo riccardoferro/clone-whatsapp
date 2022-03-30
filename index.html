@@ -39,8 +39,7 @@
             <!-- START TOP PART OF THE FIRST PART WHERE IS THE ICON PROFILE -->
 
             <!-- FIRST ROW OF THE TOP PART -->
-
-            <div class="row justify-content-between">
+            <div class="row justify-content-between bg-color-profie">
               <!-- image of the profile  with the name-->
               <div class="col-5 p-1">
                 <img
@@ -104,10 +103,10 @@
                 <img
                   :src="takeIMG(contactObj)"
                   alt="img_avatar"
-                  class="col-1 img-fluid rounded-circle"
+                  class="col-2 img-fluid rounded-circle"
                 />
                 <!-- insert name and last message send -->
-                <div class="col-10 ps-2">
+                <div class="col-9 ps-2">
                   <div>{{contactObj.name}}</div>
                   <div class="bg-text-uname-rf f-px-10-rf">
                     Ultimo messaggio inviato
@@ -118,6 +117,8 @@
               </div>
             </div>
           </div>
+
+          <!-- END  TOP PART OF THE FIRST PART WHERE IS THE ICON PROFILE -->
 
           <!-- SECOND PART OF THW WEB-APP -->
 
