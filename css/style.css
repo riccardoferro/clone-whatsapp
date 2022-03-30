@@ -22,6 +22,10 @@
 }
 /******** UTILITIES  ********/
 
+.bg-image {
+  background-image: url("../images/mine.jpg");
+}
+
 .bg-color-main-top-rf {
   background-color: hsl(174deg 100% 29%);
   height: 10%;
