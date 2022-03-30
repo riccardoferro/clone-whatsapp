@@ -155,34 +155,30 @@
             <!-- END FIRST ROW -->
 
             <!-- SECOND ROW -->
-            <div class="row flex-grow-1">ciao</div>
-            <!-- END SECOND ROW -->
-
-            <!-- THIRD ROW -->
-            <div class="row bg-color-profile justify-content-between p-2">
-              <div class="col d-flex">
-                <div class="col-1">
-                  <img
-                    src="images/avatar_io.jpg"
-                    alt="my-profile-img"
-                    class="img-fluid rounded-circle me-2"
-                  />
+            <div class="row flex-grow-1 pt-3">
+              <!-- here we have the messages -->
+              <div class="col-11 ms-auto me-auto d-flex flex-column">
+                <div class="col-4 message sent">
+                  Hai portato a spasso il cane?
                 </div>
-
-                <div class="col-6 ms-2">
-                  <div class="f-px-12-rf">Sofia</div>
-                  <div class="bg-text-uname-rf f-px-10-rf">
-                    Ultimo accesso oggi alle 12:00
-                  </div>
+                <div class="col-4 message sent">
+                  Ricordati di stendere i panni
                 </div>
+                <div class="col-4 message received">Tutto fatto</div>
               </div>
-              <!-- icons -->
-
-              <div
-                class="bg-text-uname-rf col-3 d-flex align-items-center justify-content-around"
-              >
+            </div>
+            <!-- END SECOND ROW -->
+            <!-- THIRD ROW -->
+            <div
+              class="row bg-color-profile justify-content-between p-2 text-center"
+            >
+              <div class="col-2">
                 <i class="fa-solid fa-circle-notch"></i>
-                <i class="fa-solid fa-message"></i>
+              </div>
+              <div class="col-8">
+                <input type="text" placeholder="Scrivi un messaggio" />
+              </div>
+              <div class="col-2">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
               </div>
             </div>

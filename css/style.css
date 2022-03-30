@@ -20,6 +20,22 @@
 .overflow-rf {
   overflow-y: auto;
 }
+
+.message {
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin: 5px 0;
+  font-size: 10px;
+}
+
+.sent {
+  background-color: hsl(94deg 84% 85%);
+  align-self: flex-end;
+}
+
+.received {
+  background-color: hsl(0deg 0% 100%);
+}
 /******** UTILITIES  ********/
 
 .bg-image {
