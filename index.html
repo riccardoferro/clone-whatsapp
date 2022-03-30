@@ -98,7 +98,10 @@
             <!-- BOTTOM PART OF THE FIRST PART WHERE ARE SITUATED THE CHATS -->
             <div class="row">
               <!-- contact is an element of the array contacts -->
-              <div v-for="(contactObj,i) in contacts" class="col-12 d-flex p-1">
+              <div
+                v-for="(contactObj,index) in contacts"
+                class="col-12 d-flex p-1"
+              >
                 <!-- insert images -->
                 <img
                   :src="takeIMG(contactObj)"
@@ -109,7 +112,7 @@
                 <div class="col-9 ps-2">
                   <div>{{contactObj.name}}</div>
                   <div class="bg-text-uname-rf f-px-10-rf">
-                    Ultimo messaggio inviato
+                    {{takeLastMessage(contactObj)}}
                   </div>
                 </div>
                 <!-- Hour -->

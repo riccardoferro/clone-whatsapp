@@ -2,7 +2,16 @@
    Milestone 1
    Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
    Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
-*/
+
+  MILESTONE 1 COMPLETED
+   
+  Milestone 2
+● Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i
+  messaggi relativi al contatto attivo all’interno del pannello della conversazione
+
+● Click sul contatto mostra la conversazione del contatto cliccato
+
+   */
 
 /********** CODE MAIN *********/
 
@@ -14,7 +23,7 @@ const contacts = [
     avatar: "_1",
     visible: true,
 
-    //array22 of object
+    //array2 of object
     messages: [
       {
         date: "10/01/2020 15:30:55",
@@ -217,6 +226,19 @@ const chat = new Vue({
     // function that return the path of the images contacts
     takeIMG(contact) {
       return `images/avatar${contact.avatar}.jpg`;
+    },
+    takeLastMessage(contact) {
+      //take all messages of that contact
+      const messages = contact.messages;
+
+      //length of array's messages
+      const length = messages.length - 1;
+
+      console.log(length);
+
+      const lastMessage = messages[length].message;
+
+      return lastMessage;
     },
   },
 });
