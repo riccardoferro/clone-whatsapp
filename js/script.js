@@ -300,7 +300,8 @@ const chat = new Vue({
       const words = this.filterWord;
 
       this.contacts.forEach((contact, i) => {
-        if (!contact.name.includes(words)) {
+        const nameContact = contact.name.toLowerCase();
+        if (!nameContact.includes(words)) {
           this.contacts[i].visible = false;
         }
         if (this.filterWord === "") {
