@@ -260,6 +260,20 @@ const chat = new Vue({
       return lastMessage;
     },
 
+    //take the date of the last Message
+    takeLastMessageDate(contact) {
+      //take the messages of the contact
+      const messages = contact.messages;
+      //take the last date of the last message
+      const date = messages[messages.length - 1].date;
+      //split the date and we take only the hour hh:mm:ss
+      const fullhour = date.split(" ")[1];
+      //we take only hh:mm
+      const hour = fullhour.split(":");
+
+      return hour[0] + ":" + hour[1];
+    },
+
     //set active a chat's contact
     setActiveContact(contact) {
       this.activeChat = contact;
