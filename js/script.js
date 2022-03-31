@@ -274,9 +274,17 @@ const chat = new Vue({
         message: this.newMsg,
         status: "sent",
       };
-      console.log(newMsg.date);
       this.activeChat.messages.push(newMsg);
       this.newMsg = "";
+
+      setTimeout(() => {
+        const newMsg = {
+          date: "date",
+          message: "ok",
+          status: "received",
+        };
+        this.activeChat.messages.push(newMsg);
+      }, 1000);
     },
   },
 });
