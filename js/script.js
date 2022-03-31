@@ -303,6 +303,9 @@ const chat = new Vue({
         if (!contact.name.includes(words)) {
           this.contacts[i].visible = false;
         }
+        if (this.filterWord === "") {
+          this.contacts[i].visible = true;
+        }
       });
     },
   },

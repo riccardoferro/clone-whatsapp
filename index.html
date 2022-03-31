@@ -82,12 +82,13 @@
               <div class="col-12">
                 <span>
                   <i
-                    @click=" filterChat()"
+                    @click="filterChat()"
                     class="fa-solid fa-magnifying-glass bg-text-uname-rf"
                   ></i>
                 </span>
                 <input
                   v-model="filterWord"
+                  onkeypress="`${filterChat}`"
                   type="text"
                   placeholder="Cerca o inizia una nuova chat"
                 />
