@@ -35,7 +35,7 @@
       <div
         id="chat"
         tabindex="0"
-        class="container-principal-rf container-fluid"
+        class="container-fluid position-absolute top-50 start-50 translate-middle w-65-rf"
       >
         <div class="row">
           <!-- FIRST PART OF THW WEB-APP -->
@@ -78,7 +78,7 @@
             </div>
 
             <!-- THIRD ROW OF THE TOP PART -->
-            <div class="row">
+            <div class="row bg-color-profile">
               <div class="col-12">
                 <span>
                   <i
@@ -101,7 +101,7 @@
               <div
                 v-for="(contact,index) in contacts"
                 v-if="contacts[index].visible !== false"
-                class="col-12 d-flex p-1"
+                class="col-12 d-flex p-1 bg-color-profile"
                 @click="setActiveContact(contact)"
               >
                 <!-- insert images -->

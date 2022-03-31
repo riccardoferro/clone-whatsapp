@@ -45,6 +45,9 @@
   display: none;
 }
 
+.w-65-rf {
+  width: 65%;
+}
 /******** UTILITIES  ********/
 
 .bg-image-rf {
