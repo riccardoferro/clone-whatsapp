@@ -176,6 +176,7 @@
               </div>
             </div>
             <!-- END SECOND ROW -->
+
             <!-- THIRD ROW -->
             <div
               class="row bg-color-profile justify-content-between p-2 text-center"
@@ -184,7 +185,12 @@
                 <i class="fa-solid fa-circle-notch"></i>
               </div>
               <div class="col-8">
-                <input type="text" placeholder="Scrivi un messaggio" />
+                <input
+                  v-model="newMsg"
+                  @keyUp.enter="insertNewMessage"
+                  type="text"
+                  placeholder="Scrivi un messaggio"
+                />
               </div>
               <div class="col-2">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -192,6 +198,8 @@
             </div>
             <!-- END THIRD ROW -->
           </div>
+          <!-- / SECOND PART OF THW WEB-APP -->
+
           <!-- if activeChat is undefined show a text  -->
           <div v-else class="col-8 not-selected">
             <div class="title-rf msg-not-selected">

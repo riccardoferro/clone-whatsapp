@@ -11,6 +11,15 @@
 
 ● Click sul contatto mostra la conversazione del contatto cliccato
 
+  MILESTONE 2 COMPLETED
+
+  Milestone 3
+
+● Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando
+“enter” il testo viene aggiunto al thread sopra, come messaggio verde
+
+● Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà
+un “ok” come risposta, che apparirà dopo 1 secondo.
    */
 
 /********** CODE MAIN *********/
@@ -221,6 +230,7 @@ const chat = new Vue({
   data: {
     contacts,
     activeChat: undefined,
+    newMsg: "",
   },
 
   methods: {
@@ -255,6 +265,18 @@ const chat = new Vue({
       } else {
         return "sent-rf";
       }
+    },
+
+    //add new message
+    insertNewMessage() {
+      const newMsg = {
+        date: "Date",
+        message: this.newMsg,
+        status: "sent",
+      };
+      console.log(newMsg.date);
+      this.activeChat.messages.push(newMsg);
+      this.newMsg = "";
     },
   },
 });
