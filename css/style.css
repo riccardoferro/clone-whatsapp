@@ -36,6 +36,7 @@
 .received-rf {
   background-color: hsl(0deg 0% 100%);
 }
+
 /******** UTILITIES  ********/
 
 .bg-image-rf {
@@ -94,6 +95,7 @@
   background-color: white;
 }
 
+/* Classes for noone chat selected  */
 .not-selected {
   color: white;
   background-image: url("../images/mine.jpg");
@@ -106,4 +108,6 @@
   opacity: 0.5;
   text-align: center;
 }
+/* Classes for noone chat selected  */
+
 /* ******* / UTILITIES  ******* */

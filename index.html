@@ -32,7 +32,11 @@
       <div class="bg-color-main-bottom-rf"></div>
 
       <!-- PRINCIPAL CONTAINER WHERE IS THE IMPORTANT CODE -->
-      <div id="chat" class="container-principal-rf container-fluid">
+      <div
+        id="chat"
+        tabindex="0"
+        class="container-principal-rf container-fluid"
+      >
         <div class="row">
           <!-- FIRST PART OF THW WEB-APP -->
           <div class="col-4">
@@ -99,21 +103,21 @@
             <div class="row">
               <!-- contact is an element of the array contacts -->
               <div
-                v-for="(contactObj,index) in contacts"
+                v-for="(contact,index) in contacts"
                 class="col-12 d-flex p-1"
-                @click="setActiveContact(index)"
+                @click="setActiveContact(contact)"
               >
                 <!-- insert images -->
                 <img
-                  :src="takeIMG(contactObj)"
+                  :src="takeIMG(contact)"
                   alt="img_avatar"
                   class="col-2 img-fluid rounded-circle"
                 />
                 <!-- insert name and last message send -->
                 <div class="col-9 ps-2">
-                  <div>{{contactObj.name}}</div>
+                  <div>{{contact.name}}</div>
                   <div class="bg-text-uname-rf f-px-10-rf">
-                    {{takeLastMessage(contactObj)}}
+                    {{takeLastMessage(contact)}}
                   </div>
                 </div>
                 <!-- Hour -->
@@ -126,7 +130,7 @@
           <!-- SECOND PART OF THW WEB-APP -->
 
           <div
-            v-if="contacts[0].active !== null"
+            v-if="activeChat"
             class="col-8 bg-image-rf d-flex flex-column justify-content-between"
           >
             <!-- FIRST ROW -->
@@ -134,21 +138,21 @@
               <div class="col d-flex">
                 <div class="col-1">
                   <img
-                    src="images/avatar_io.jpg"
+                    :src="takeIMG(activeChat)"
                     alt="my-profile-img"
                     class="img-fluid rounded-circle me-2"
                   />
                 </div>
 
                 <div class="col-6 ms-2">
-                  <div class="f-px-12-rf">{{contacts[0].nome}}</div>
+                  <div class="f-px-12-rf">{{ activeChat.name }}</div>
                   <div class="bg-text-uname-rf f-px-10-rf">
                     Ultimo accesso oggi alle 12:00
                   </div>
                 </div>
               </div>
-              <!-- icons -->
 
+              <!-- icons -->
               <div
                 class="bg-text-uname-rf col-3 d-flex align-items-center justify-content-around"
               >
@@ -163,13 +167,12 @@
             <div class="row flex-grow-1 pt-3">
               <!-- here we have the messages -->
               <div class="col-11 ms-auto me-auto d-flex flex-column">
-                <div class="col-4 message-rf sent-rf">
-                  Hai portato a spasso il cane?
+                <div
+                  v-for="(message,index) in (activeChat.messages)"
+                  :class="['col-4', 'message-rf', checkStatusMsg(message)]"
+                >
+                  {{activeChat.messages[index].message}}
                 </div>
-                <div class="col-4 message-rf sent-rf">
-                  Ricordati di stendere i panni
-                </div>
-                <div class="col-4 message-rf received-rf">Tutto fatto</div>
               </div>
             </div>
             <!-- END SECOND ROW -->
@@ -189,6 +192,7 @@
             </div>
             <!-- END THIRD ROW -->
           </div>
+          <!-- if activeChat is undefined show a text  -->
           <div v-else class="col-8 not-selected">
             <div class="title-rf msg-not-selected">
               <h3>Select a chat</h3>

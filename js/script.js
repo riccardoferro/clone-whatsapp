@@ -22,8 +22,7 @@ const contacts = [
     name: "Michele",
     avatar: "_1",
     visible: true,
-    //add var active
-    active: null,
+
     //array2 of object
     messages: [
       {
@@ -49,8 +48,7 @@ const contacts = [
     name: "Fabio",
     avatar: "_2",
     visible: true,
-    //add var active
-    active: null,
+
     //array2 of object
     messages: [
       {
@@ -76,8 +74,7 @@ const contacts = [
     name: "Samuele",
     avatar: "_3",
     visible: true,
-    //add var active
-    active: null,
+
     //array2 of object
     messages: [
       {
@@ -103,8 +100,7 @@ const contacts = [
     name: "Alessandro B.",
     avatar: "_4",
     visible: true,
-    //add var active
-    active: null,
+
     //array2 of object
     messages: [
       {
@@ -125,8 +121,7 @@ const contacts = [
     name: "Alessandro L.",
     avatar: "_5",
     visible: true,
-    //add var active
-    active: null,
+
     //array2 of object
     messages: [
       {
@@ -147,8 +142,7 @@ const contacts = [
     name: "Claudia",
     avatar: "_6",
     visible: true,
-    //add var active
-    active: null,
+
     //array2 of object
     messages: [
       {
@@ -174,8 +168,7 @@ const contacts = [
     name: "Federico",
     avatar: "_7",
     visible: true,
-    //add var active
-    active: null,
+
     //array2 of object
     messages: [
       {
@@ -196,8 +189,7 @@ const contacts = [
     name: "Davide",
     avatar: "_8",
     visible: true,
-    //add var active
-    active: null,
+
     //array2 of object
     messages: [
       {
@@ -228,6 +220,7 @@ const chat = new Vue({
 
   data: {
     contacts,
+    activeChat: undefined,
   },
 
   methods: {
@@ -235,6 +228,8 @@ const chat = new Vue({
     takeIMG(contact) {
       return `images/avatar${contact.avatar}.jpg`;
     },
+
+    //method that take the last message
     takeLastMessage(contact) {
       //take all messages of that contact
       const messages = contact.messages;
@@ -246,8 +241,20 @@ const chat = new Vue({
 
       return lastMessage;
     },
-    setActiveContact(index) {
-      this.contacts[index].active = 1;
+
+    //set active a chat's contact
+    setActiveContact(contact) {
+      this.activeChat = contact;
+      console.log(this.activeChat);
+    },
+
+    //check the status of a message
+    checkStatusMsg(message) {
+      if (message.status === "received") {
+        return "received-rf";
+      } else {
+        return "sent-rf";
+      }
     },
   },
 });
