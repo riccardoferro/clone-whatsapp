@@ -20,7 +20,14 @@
 
 ● Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà
 un “ok” come risposta, che apparirà dopo 1 secondo.
-   */
+   
+MILESTONE 3 COMPLETED
+
+Milestone 4
+● Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i
+contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo
+“mar” rimangono solo Marco e Martina)
+*/
 
 /********** CODE MAIN *********/
 
@@ -231,6 +238,7 @@ const chat = new Vue({
     contacts,
     activeChat: undefined,
     newMsg: "",
+    filterWord: "",
   },
 
   methods: {
@@ -276,7 +284,7 @@ const chat = new Vue({
       };
       this.activeChat.messages.push(newMsg);
       this.newMsg = "";
-
+      //after 1 seconds the interlocutor answer with an "ok"
       setTimeout(() => {
         const newMsg = {
           date: "date",
@@ -285,6 +293,17 @@ const chat = new Vue({
         };
         this.activeChat.messages.push(newMsg);
       }, 1000);
+    },
+
+    //filter chats
+    filterChat() {
+      const words = this.filterWord;
+
+      this.contacts.forEach((contact, i) => {
+        if (!contact.name.includes(words)) {
+          this.contacts[i].visible = false;
+        }
+      });
     },
   },
 });

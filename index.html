@@ -79,24 +79,19 @@
 
             <!-- THIRD ROW OF THE TOP PART -->
             <div class="row">
-              <nav class="navbar navbar-light bg-light">
-                <form class="col-12">
-                  <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">
-                      <i
-                        class="fa-solid fa-magnifying-glass bg-text-uname-rf"
-                      ></i>
-                    </span>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Cerca o inizia una nuova chat"
-                      aria-label="Username"
-                      aria-describedby="basic-addon1"
-                    />
-                  </div>
-                </form>
-              </nav>
+              <div class="col-12">
+                <span>
+                  <i
+                    @click=" filterChat()"
+                    class="fa-solid fa-magnifying-glass bg-text-uname-rf"
+                  ></i>
+                </span>
+                <input
+                  v-model="filterWord"
+                  type="text"
+                  placeholder="Cerca o inizia una nuova chat"
+                />
+              </div>
             </div>
 
             <!-- BOTTOM PART OF THE FIRST PART WHERE ARE SITUATED THE CHATS -->
@@ -104,6 +99,7 @@
               <!-- contact is an element of the array contacts -->
               <div
                 v-for="(contact,index) in contacts"
+                v-if="contacts[index].visible !== false"
                 class="col-12 d-flex p-1"
                 @click="setActiveContact(contact)"
               >
@@ -184,6 +180,8 @@
               <div class="col-2">
                 <i class="fa-solid fa-circle-notch"></i>
               </div>
+
+              <!-- with a key up enter call a function that insert a message -->
               <div class="col-8">
                 <input
                   v-model="newMsg"
