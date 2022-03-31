@@ -88,8 +88,8 @@
                 </span>
                 <input
                   v-model="filterWord"
-                  onkeypress="`${filterChat}`"
                   type="text"
+                  onkeypress="filterChat()"
                   placeholder="Cerca o inizia una nuova chat"
                 />
               </div>
