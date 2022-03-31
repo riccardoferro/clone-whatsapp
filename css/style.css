@@ -37,6 +37,14 @@
   background-color: hsl(0deg 0% 100%);
 }
 
+.deleteBox {
+  background-color: white;
+  position: absolute;
+  padding: 10px;
+  z-index: 1;
+  display: none;
+}
+
 /******** UTILITIES  ********/
 
 .bg-image-rf {
