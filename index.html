@@ -35,9 +35,9 @@
       <div
         id="chat"
         tabindex="0"
-        class="container-fluid position-absolute top-50 start-50 translate-middle w-65-rf"
+        class="container-principal-rf container-fluid"
       >
-        <div class="row">
+        <div class="row h-100">
           <!-- FIRST PART OF THW WEB-APP -->
           <div class="col-4">
             <!-- START TOP PART OF THE FIRST PART WHERE IS THE ICON PROFILE -->
@@ -78,7 +78,7 @@
             </div>
 
             <!-- THIRD ROW OF THE TOP PART -->
-            <div class="row bg-color-profile">
+            <div class="row">
               <div class="col-12">
                 <span>
                   <i
@@ -101,7 +101,7 @@
               <div
                 v-for="(contact,index) in contacts"
                 v-if="contacts[index].visible !== false"
-                class="col-12 d-flex p-1 bg-color-profile"
+                class="col-12 d-flex p-1"
                 @click="setActiveContact(contact)"
               >
                 <!-- insert images -->
@@ -168,14 +168,10 @@
               <div class="col-11 ms-auto me-auto d-flex flex-column">
                 <div
                   v-for="(message,index) in (activeChat.messages)"
-                  @click="deleteMessage(i,activeChat.messages)"
+                  @click="deleteMessage(index,activeChat.messages)"
                   :class="['col-4', 'message-rf', checkStatusMsg(message),'position-relative']"
                 >
-                  <i
-                    @click="deleteMessage(activeChat.messages)"
-                    class="fa-solid fa-angle-down position-absolute top-0 end-0"
-                  ></i>
-                  <div v-if="" class="deleteBox top-50 end-0">
+                  <div class="deleteBox top-50 end-0">
                     <div>Message info</div>
                     <div>Delete Message</div>
                   </div>
@@ -197,7 +193,7 @@
               <div class="col-8">
                 <input
                   v-model="newMsg"
-                  @keyUp.enter="insertNewMessage"
+                  v-on:keyUp.enter="insertNewMessage"
                   type="text"
                   placeholder="Scrivi un messaggio"
                 />

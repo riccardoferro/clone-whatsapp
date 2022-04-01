@@ -241,7 +241,6 @@ const contacts = [
 
 const chat = new Vue({
   el: "#chat",
-
   data: {
     contacts,
     activeChat: undefined,
@@ -270,14 +269,20 @@ const chat = new Vue({
 
     //take the date of the last Message
     takeLastMessageDate(contact) {
+      // console.log(contact);
+
       //take the messages of the contact
       const messages = contact.messages;
       //take the last date of the last message
       const date = messages[messages.length - 1].date;
       //split the date and we take only the hour hh:mm:ss
       const fullhour = date.split(" ")[1];
+
+      // console.log("this is the fullhour", fullhour);
       //we take only hh:mm
       const hour = fullhour.split(":");
+
+      // console.log("this is the hour", hour);
 
       return hour[0] + ":" + hour[1];
     },
@@ -300,7 +305,7 @@ const chat = new Vue({
     //add new message
     insertNewMessage() {
       const newMsg = {
-        date: "Date",
+        date: "10/01/2020 15:30:55",
         message: this.newMsg,
         status: "sent",
       };
@@ -309,7 +314,7 @@ const chat = new Vue({
       //after 1 seconds the interlocutor answer with an "ok"
       setTimeout(() => {
         const newMsg = {
-          date: "date",
+          date: "10/01/2020 15:30:55",
           message: "ok",
           status: "received",
         };
