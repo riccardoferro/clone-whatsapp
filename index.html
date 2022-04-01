@@ -27,193 +27,215 @@
     <script src="js/script.js" defer></script>
   </head>
   <body>
-    <main class="vh-100 vw-100 position-relative">
-      <div class="bg-color-main-top-rf"></div>
-      <div class="bg-color-main-bottom-rf"></div>
+      <main class="vh-100 vw-100 position-relative">
+          <div class="bg-color-main-top-rf"></div>
+          <div class="bg-color-main-bottom-rf"></div>
 
-      <!-- PRINCIPAL CONTAINER WHERE IS THE IMPORTANT CODE -->
-      <div
-        id="chat"
-        tabindex="0"
-        class="container-principal-rf container-fluid"
-      >
-        <div class="row h-100">
-          <!-- FIRST PART OF THW WEB-APP -->
-          <div class="col-4">
-            <!-- START TOP PART OF THE FIRST PART WHERE IS THE ICON PROFILE -->
-
-            <!-- FIRST ROW OF THE TOP PART -->
-            <div class="row justify-content-between bg-color-profile">
-              <!-- image of the profile  with the name-->
-              <div class="col-5 p-1">
-                <img
-                  src="images/avatar_io.jpg"
-                  alt="my-profile-img"
-                  class="img-fluid col-4 rounded-circle"
-                />
-                <span class="col-1">Sofia</span>
-              </div>
-
-              <!-- icons -->
-              <div
-                class="bg-text-uname-rf col-3 d-flex align-items-center justify-content-between"
-              >
-                <i class="fa-solid fa-circle-notch"></i>
-                <i class="fa-solid fa-message"></i>
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </div>
-            </div>
-
-            <!-- SECOND ROW OF THE TOP PART -->
-            <div class="row bg-color-light-blue">
-              <div class="col-2 d-flex align-items-center">
-                <span class="rounded-circle bg-color-white p-2">
-                  <i class="fa-solid fa-bell-slash f-color-light-blue"></i>
-                </span>
-              </div>
-              <div class="col-10 p-2">
-                <div class="f-px-12-rf">Ricevi notifiche di nuovi messaggi</div>
-                <a href="#" class="f-px-10-rf">Attiva notifiche desktop</a>
-              </div>
-            </div>
-
-            <!-- THIRD ROW OF THE TOP PART -->
-            <div class="row">
-              <div class="col-12">
-                <span>
-                  <i
-                    @click="filterChat()"
-                    class="fa-solid fa-magnifying-glass bg-text-uname-rf"
-                  ></i>
-                </span>
-                <input
-                  v-model="filterWord"
-                  type="text"
-                  @keyup="filterChat()"
-                  placeholder="Cerca o inizia una nuova chat"
-                />
-              </div>
-            </div>
-
-            <!-- BOTTOM PART OF THE FIRST PART WHERE ARE SITUATED THE CHATS -->
-            <div class="row">
-              <!-- contact is an element of the array contacts -->
-              <div
-                v-for="(contact,index) in contacts"
-                v-if="contacts[index].visible !== false"
-                class="col-12 d-flex p-1"
-                @click="setActiveContact(contact)"
-              >
-                <!-- insert images -->
-                <img
-                  :src="takeIMG(contact)"
-                  alt="img_avatar"
-                  class="col-2 img-fluid rounded-circle"
-                />
-                <!-- insert name and last message send -->
-                <div class="col-9 ps-2">
-                  <div>{{contact.name}}</div>
-                  <div class="bg-text-uname-rf f-px-10-rf">
-                    {{takeLastMessage(contact)}}
-                  </div>
-                </div>
-                <!-- Hour -->
-                <div class="col-1 bg-text-uname-rf f-px-10-rf">
-                  {{takeLastMessageDate(contact)}}
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- END TOP PART OF THE FIRST PART WHERE IS THE ICON PROFILE -->
-
-          <!-- SECOND PART OF THW WEB-APP -->
-
+          <!-- PRINCIPAL CONTAINER WHERE IS THE IMPORTANT CODE -->
           <div
-            v-if="activeChat"
-            class="col-8 bg-image-rf d-flex flex-column justify-content-between"
+            id="chat"
+            tabindex="0"
+            class="container-principal-rf container-fluid"
           >
-            <!-- FIRST ROW -->
-            <div class="row bg-color-profile justify-content-between p-2">
-              <div class="col d-flex">
-                <div class="col-1">
-                  <img
-                    :src="takeIMG(activeChat)"
-                    alt="my-profile-img"
-                    class="img-fluid rounded-circle me-2"
-                  />
-                </div>
+            <div class="row h-100">
 
-                <div class="col-6 ms-2">
-                  <div class="f-px-12-rf">{{ activeChat.name }}</div>
-                  <div class="bg-text-uname-rf f-px-10-rf">
-                    Ultimo accesso oggi alle 12:00
+                <!-- FIRST PART OF THW WEB-APP -->
+                <div class="col-4">
+
+                  <!-- FIRST ROW OF THE TOP PART -->
+                  <div class="row justify-content-between bg-color-profile">
+
+                      <!-- image of the profile  with the name-->
+                      <div class="col-5 p-1">
+                          <img
+                            src="images/avatar_io.jpg"
+                            alt="my-profile-img"
+                            class="img-fluid col-4 rounded-circle"
+                          />
+                          <span class="col-1">Sofia</span>
+                      </div>
+
+                      <!-- icons -->
+                      <div
+                        class="bg-text-uname-rf col-3 d-flex align-items-center justify-content-between"
+                      >
+                          <i class="fa-solid fa-circle-notch"></i>
+                          <i class="fa-solid fa-message"></i>
+                          <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                      </div>
+
                   </div>
+
+                  <!-- SECOND ROW OF THE TOP PART -->
+                  <div class="row bg-color-light-blue">
+
+                      <div class="col-2 d-flex align-items-center">
+                          <span class="rounded-circle bg-color-white p-2">
+                            <i class="fa-solid fa-bell-slash f-color-light-blue"></i>
+                          </span>
+                      </div>
+
+                      <div class="col-10 p-2">
+                          <div class="f-px-12-rf">Ricevi notifiche di nuovi messaggi</div>
+                          <a href="#" class="f-px-10-rf">Attiva notifiche desktop</a>
+                      </div>
+
+                  </div>
+
+                  <!-- THIRD ROW OF THE TOP PART -->
+                  <div class="row">
+                      <div class="col-12">
+                          <span>
+                              <i
+                                @click="filterChat()"
+                                class="fa-solid fa-magnifying-glass bg-text-uname-rf"
+                              ></i>
+                          </span>
+                          <input
+                            v-model="filterWord"
+                            type="text"
+                            @keyup="filterChat()"
+                            placeholder="Cerca o inizia una nuova chat"
+                          />
+                      </div>
+                  </div>
+
+                  <!-- BOTTOM PART OF THE FIRST PART WHERE ARE SITUATED THE CHATS -->
+                  <div class="row">
+
+                      <!-- contact is an element of the array contacts -->
+                      <div
+                        v-for="(contact,index) in contacts"
+                        v-if="contacts[index].visible !== false"
+                        class="col-12 d-flex p-1"
+                        @click="setActiveContact(contact)"
+                      >
+                          <!-- insert images -->
+                          <img
+                            :src="takeIMG(contact)"
+                            alt="img_avatar"
+                            class="col-2 img-fluid rounded-circle"
+                          />
+
+                          <!-- insert name and last message send -->
+                          <div class="col-9 ps-2">
+                              <div>{{contact.name}}</div>
+                              <div
+                                  v-if="contact.messages.length > 0"
+                                  class="bg-text-uname-rf f-px-10-rf"
+                              >
+                                  {{takeLastMessage(contact)}}
+                              </div>
+                          </div>
+                          
+                          <!-- Hour -->
+                          <div
+                            v-if="contact.messages.length > 0"
+                            class="col-1 bg-text-uname-rf f-px-10-rf"
+                          >
+                            {{takeLastMessageDate(contact)}}
+                          </div>
+                      </div>
+
+                  </div>
+
+                <!-- END TOP PART OF THE FIRST PART WHERE IS THE ICON PROFILE -->
                 </div>
-              </div>
 
-              <!-- icons -->
-              <div
-                class="bg-text-uname-rf col-3 d-flex align-items-center justify-content-around"
-              >
-                <i class="fa-solid fa-circle-notch"></i>
-                <i class="fa-solid fa-message"></i>
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </div>
-            </div>
-            <!-- END FIRST ROW -->
 
-            <!-- SECOND ROW -->
-            <div class="row flex-grow-1 pt-3">
-              <!-- here we have the messages -->
-              <div class="col-11 ms-auto me-auto d-flex flex-column">
+                <!-- SECOND PART OF THW WEB-APP -->
                 <div
-                  v-for="(message,index) in (activeChat.messages)"
-                  @click="deleteMessage(index,activeChat.messages)"
-                  :class="['col-4', 'message-rf', checkStatusMsg(message),'position-relative']"
+                  v-if="activeChat"
+                  class="col-8 bg-image-rf d-flex flex-column justify-content-between"
                 >
-                  <div class="deleteBox top-50 end-0">
-                    <div>Message info</div>
-                    <div>Delete Message</div>
-                  </div>
-                  {{activeChat.messages[index].message}}
+                    <!-- FIRST ROW -->
+                    <div class="row bg-color-profile justify-content-between p-2">
+                      <div class="col d-flex">
+                        <div class="col-1">
+                          <img
+                            :src="takeIMG(activeChat)"
+                            alt="my-profile-img"
+                            class="img-fluid rounded-circle me-2"
+                          />
+                        </div>
+
+                        <div class="col-6 ms-2">
+                          <div class="f-px-12-rf">{{ activeChat.name }}</div>
+                          <div class="bg-text-uname-rf f-px-10-rf">
+                            Ultimo accesso oggi alle 12:00
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- icons -->
+                      <div
+                        class="bg-text-uname-rf col-3 d-flex align-items-center justify-content-around"
+                      >
+                        <i class="fa-solid fa-circle-notch"></i>
+                        <i class="fa-solid fa-message"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                      </div>
+                    </div>
+                    <!-- END FIRST ROW -->
+
+                    <!-- SECOND ROW -->
+                    <div class="row flex-grow-1 pt-3">
+
+                        <!-- here we have the messages -->
+                        <div class="col-11 ms-auto me-auto d-flex flex-column">
+                            <div
+                              v-for="(message,index) in (activeChat.messages)"
+                              @click="deleteMessage(index,activeChat.messages)"
+                              :class="['col-4', 'message-rf', checkStatusMsg(message),'position-relative']"
+                            >
+                              <div class="deleteBox top-50 end-0">
+                                  <div>Message info</div>
+                                  <div>Delete Message</div>
+                              </div>
+                              {{activeChat.messages[index].message}}
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- END SECOND ROW -->
+
+                    <!-- THIRD ROW -->
+                    <div
+                      class="row bg-color-profile justify-content-between p-2 text-center"
+                    >
+                        <div class="col-2">
+                          <i class="fa-solid fa-circle-notch"></i>
+                        </div>
+
+                        <!-- with a key up enter call a function that insert a message -->
+                        <div class="col-8">
+                            <input
+                              v-model="newMsg"
+                              v-on:keyUp.enter="insertNewMessage"
+                              type="text"
+                              placeholder="Scrivi un messaggio"
+                            />
+                        </div>
+
+                        <div class="col-2">
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+
+                    </div>
+                    <!-- END THIRD ROW -->
+
                 </div>
-              </div>
-            </div>
-            <!-- END SECOND ROW -->
+                <!-- / SECOND PART OF THW WEB-APP -->
 
-            <!-- THIRD ROW -->
-            <div
-              class="row bg-color-profile justify-content-between p-2 text-center"
-            >
-              <div class="col-2">
-                <i class="fa-solid fa-circle-notch"></i>
-              </div>
-
-              <!-- with a key up enter call a function that insert a message -->
-              <div class="col-8">
-                <input
-                  v-model="newMsg"
-                  v-on:keyUp.enter="insertNewMessage"
-                  type="text"
-                  placeholder="Scrivi un messaggio"
-                />
-              </div>
-              <div class="col-2">
-                <i class="fa-solid fa-ellipsis-vertical"></i>
-              </div>
-            </div>
-            <!-- END THIRD ROW -->
-          </div>
-          <!-- / SECOND PART OF THW WEB-APP -->
-
-          <!-- if activeChat is undefined show a text  -->
-          <div v-else class="col-8 not-selected">
-            <div class="title-rf msg-not-selected">
-              <h3>Select a chat</h3>
+                  <!-- if activeChat is undefined show a text  -->
+                  <div v-else class="col-8 not-selected">
+                      <div class="title-rf msg-not-selected">
+                          <h3>Select a chat</h3>
+                      </div>
+                  </div>
             </div>
           </div>
-        </div>
-      </div>
-    </main>
+      </main>
   </body>
 </html>
